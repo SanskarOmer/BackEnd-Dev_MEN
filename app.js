@@ -11,6 +11,8 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended : true }));
 
+app.use(express.static('public'));
+
 
 // app.use((req, res, next)=>{
 //     console.log(`New request received at ${new Date().toISOString()}`);
