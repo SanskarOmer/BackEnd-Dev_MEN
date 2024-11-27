@@ -6,11 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <div>
-        <p>This is a paragraph.</p>
-        <p>This is another paragraph.</p>
-        <p>This is yet another paragraph.</p>
+  <form action="get-data" >
+    <label for="name"
+    >Name:
+    </label>
+    <input type="text" name="name" placeholder="Enter name" required>
+    <label for="email">Email:</label>
+    <input type="email" name="email" placeholder="Enter email" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" placeholder="Enter password">
+    <button type="submit">Submit</button>
+  </form>
     </div>
 </body>
 </html>

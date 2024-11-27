@@ -14,6 +14,12 @@ app.use((req, res, next)=>{
      next();
 });
 
+app.get('/get-data', (req, res)=>{
+    console.log(req.query);
+    res.send( 'Data retrieved successfully');
+});
+
+
 app.get('/', (req, res) => { 
     res.render('index');
 });
