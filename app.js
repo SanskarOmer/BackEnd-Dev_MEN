@@ -51,11 +51,20 @@ app.post('/register',  (req, res) => {
 
 app.get('/get-user', async (req, res) => {
     await userModel.findOne({
-        username: 'a'
+        username: 'aditi'
     }).then((user) => {
         res.send(user);
     });
 })
 
+app.get('/update', (req, res) => {
+    userModel.updateOne({
+        username: 'a'
+    }, {
+        username: 'aditi'
+    }).then(() => {
+        res.send('User updated successfully');
+    });
+})
 
 app.listen(3000);
