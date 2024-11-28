@@ -67,4 +67,12 @@ app.get('/update', (req, res) => {
     });
 })
 
+app.get('/delete', (req, res) => {
+    userModel.deleteOne({
+        username: 'aditi'
+    }).then(() => {
+        res.send('User deleted successfully');
+    });
+})
+
 app.listen(3000);
