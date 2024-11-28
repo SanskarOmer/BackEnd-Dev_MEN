@@ -37,4 +37,15 @@ app.get('/contact', (req, res) => {
     res.render('contact');
 });
 
+app.get('/register', (req, res) => { 
+    res.render('register');
+});
+
+app.post('/register',  (req, res) => {
+    const { username, email, password } = req.body;
+    const newUser = new userModel({ username, email, password });
+    newUser.save()
+       .then(() => res.send('User registered successfully'))
+       .catch(err => res.status(400).send(err));
+});
 app.listen(3000);
