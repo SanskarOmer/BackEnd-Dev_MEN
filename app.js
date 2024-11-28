@@ -48,4 +48,14 @@ app.post('/register',  (req, res) => {
        .then(() => res.send('User registered successfully'))
        .catch(err => res.status(400).send(err));
 });
+
+app.get('/get-user', async (req, res) => {
+    await userModel.findOne({
+        username: 'a'
+    }).then((user) => {
+        res.send(user);
+    });
+})
+
+
 app.listen(3000);
